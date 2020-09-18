@@ -1,14 +1,10 @@
-## [Máster en Ingeniería Web por la Universidad Politécnica de Madrid (miw-upm)](http://miw.etsisi.upm.es)
-## Ingeniería Web: Visión General (IWVG) DevOps
-> Este proyecto es una Plantilla de apoyo docente de la asignatura.
+## Ingeniería Web: Visión General (IWVG) - DevOps
+### By: Andrea Calvo Moreno (https://www.linkedin.com/in/andrea-calvo-moreno-63a71b115/) 
+#### Curso 2020/2021 - Máster en Ingeniería Web[(miw-upm)](http://miw.etsisi.upm.es)
+> This project has been carried out following the instructions provided by the UPM.
 
-### :gear: Instalación del proyecto
-1. Clonar el repositorio en tu equipo, **mediante consola**:
-```sh
-> cd <folder path>
-> git clone https://github.com/:owner/:repo
-```
-2. Importar el proyecto mediante **IntelliJ IDEA**
-   1. **Import Project**, y seleccionar la carpeta del proyecto.
-   1. Marcar **Create Project from external model**, elegir **Maven**.
-   1. **Next** … **Finish**.
+### Budges
+[![Build Status](https://travis-ci.org/acalvom/iwvg-devops-andrea-calvo.svg?branch=master)](https://travis-ci.org/acalvom/iwvg-devops-andrea-calvo)
+
+### Required technologies
+`Java` `Maven` `GitHub` `Travis-ci` `Sonarcloud` `Better Code Hub` `Slack` `Heroku` `OpenAPI`
