@@ -1,5 +1,6 @@
 package es.upm.miw.iwvg_devops.practise;
 
+
 /**
  * Conceptos: Las fracciones propias son aquellas cuyo numerador es menor que el denominador
  * <p>
@@ -59,6 +60,44 @@ public class Fraction {
         return (double) numerator / denominator;
     }
 
+    public Fraction add(Fraction inputFraction) {
+        Fraction addFraction = new Fraction();
+        addFraction.denominator = this.denominator * inputFraction.denominator;
+        addFraction.numerator = (addFraction.denominator / this.denominator * this.numerator)
+                + (addFraction.denominator / inputFraction.denominator * inputFraction.numerator);
+        return (addFraction);
+    }
+
+
+    public Fraction multiply(Fraction inputFraction) {
+        Fraction multiplyFraction = new Fraction();
+        multiplyFraction.denominator = this.denominator * inputFraction.denominator;
+        multiplyFraction.numerator = this.numerator * inputFraction.numerator;
+        return (multiplyFraction);
+    }
+
+    public Fraction divide(Fraction inputFraction) {
+        Fraction divideFraction = new Fraction();
+        divideFraction.denominator = this.denominator * inputFraction.numerator;
+        divideFraction.numerator = this.numerator * inputFraction.denominator;
+        return (divideFraction);
+    }
+
+    public boolean isProper() {
+        return (this.numerator < this.denominator);
+
+    }
+
+    public boolean isImproper() {
+        return (this.numerator >= this.denominator);
+
+    }
+
+    public boolean isEquivalent(Fraction inputFraction) {
+        return (inputFraction.numerator * this.denominator == inputFraction.denominator * this.numerator);
+    }
+
+
     @Override
     public String toString() {
         return "Fraction{" +
@@ -66,4 +105,5 @@ public class Fraction {
                 ", denominator=" + denominator +
                 '}';
     }
+
 }
