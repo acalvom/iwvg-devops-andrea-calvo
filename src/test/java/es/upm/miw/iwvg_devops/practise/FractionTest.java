@@ -40,5 +40,50 @@ public class FractionTest {
         assertEquals(1.6, testFraction.decimal(), 10e5);
     }
 
+    @Test
+    void testAdd() {
+        Fraction testFraction = new Fraction(8, 5);
+        Fraction inputFraction = new Fraction(4, 6);
+        assertEquals(68, testFraction.add(inputFraction).getNumerator());
+        assertEquals(30, testFraction.add(inputFraction).getDenominator());
+    }
+
+
+    @Test
+    void testMultiply() {
+        Fraction testFraction = new Fraction(8, 5);
+        Fraction inputFraction = new Fraction(4, 6);
+        assertEquals(32, testFraction.multiply(inputFraction).getNumerator());
+        assertEquals(30, testFraction.multiply(inputFraction).getDenominator());
+
+    }
+
+    @Test
+    void testDivide() {
+        Fraction testFraction = new Fraction(8, 5);
+        Fraction inputFraction = new Fraction(4, 6);
+        assertEquals(48, testFraction.divide(inputFraction).getNumerator());
+        assertEquals(20, testFraction.divide(inputFraction).getDenominator());
+    }
+
+    @Test
+    void testIsProper() {
+        Fraction testFraction = new Fraction(8, 5);
+        assertEquals(false, testFraction.isProper());
+    }
+
+    @Test
+    void testIsImproper() {
+        Fraction testFraction = new Fraction(8, 5);
+        assertEquals(true, testFraction.isImproper());
+    }
+
+    @Test
+    void testIsEquivalent() {
+        Fraction testFraction = new Fraction(8, 5);
+        Fraction inputFraction = new Fraction(4, 6);
+        assertEquals(false, testFraction.isEquivalent(inputFraction));
+    }
+
 
 }
