@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -49,5 +50,11 @@ class SearchesTest {
     }
 
     void testFindFractionMultiplicationByUserFamilyName() {
+    }
+
+    @Test
+    void testFindUserFamilyNameByImproperFraction() {
+        assertEquals(List.of("Fernandez", "Blanco", "López", "Torres"), new Searches().findUserFamilyNameByImproperFraction()
+                .collect(Collectors.toList()));
     }
 }
