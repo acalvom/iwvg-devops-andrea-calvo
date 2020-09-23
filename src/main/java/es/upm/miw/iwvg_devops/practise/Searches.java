@@ -49,9 +49,10 @@ public class Searches {
                 .map(user -> user.getFractions())
                 .flatMap(fractions -> fractions.stream())
                 .peek(user -> System.out.printf("after: " + user))
-                .reduce( (fraction1, fraction2)-> fraction1.divide(fraction2))
+                .reduce((fraction1, fraction2) -> fraction1.divide(fraction2))
                 .orElse(null);
     }
+
 
     public Double findFirstDecimalFractionByUserName(String name) {
         return null;

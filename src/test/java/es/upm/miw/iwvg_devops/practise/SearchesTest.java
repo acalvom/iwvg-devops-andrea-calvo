@@ -1,13 +1,15 @@
 package es.upm.miw.iwvg_devops.practise;
 
 import org.apache.logging.log4j.LogManager;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.util.Assert;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class SearchesTest {
 
@@ -55,9 +57,10 @@ class SearchesTest {
 
     @Test
     void testFindFirstFractionDivisionByUserId() {
-
-
+        Fraction fraction = new Fraction(120, -8);
+        assertTrue(new Searches().findFirstFractionDivisionByUserId("2").isEquivalent(fraction));
     }
+
     @Test
     void testFindUserFamilyNameByImproperFraction() {
         assertEquals(List.of("Fernandez", "Blanco", "López", "Torres"), new Searches().findUserFamilyNameByImproperFraction()
