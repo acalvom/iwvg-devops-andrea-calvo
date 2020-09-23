@@ -2,6 +2,7 @@ package es.upm.miw.iwvg_devops.practise;
 
 import org.apache.logging.log4j.LogManager;
 
+import java.util.Optional;
 import java.util.stream.Stream;
 
 public class Searches {
@@ -42,7 +43,14 @@ public class Searches {
     }
 
     public Fraction findFirstFractionDivisionByUserId(String id) {
-        return null;
+        return new UsersDatabase().findAll()
+                .filter(user -> id.equals(user.getId()))
+                .peek(user -> System.out.printf("before: " + user))
+                .map(user -> user.getFractions())
+                .flatMap(fractions -> fractions.stream())
+                .peek(user -> System.out.printf("after: " + user))
+                .reduce( (fraction1, fraction2)-> fraction1.divide(fraction2))
+                .orElse(null);
     }
 
     public Double findFirstDecimalFractionByUserName(String name) {

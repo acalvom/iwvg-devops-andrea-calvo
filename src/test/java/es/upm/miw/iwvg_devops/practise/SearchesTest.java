@@ -1,5 +1,6 @@
 package es.upm.miw.iwvg_devops.practise;
 
+import org.apache.logging.log4j.LogManager;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -52,6 +53,11 @@ class SearchesTest {
     void testFindFractionMultiplicationByUserFamilyName() {
     }
 
+    @Test
+    void testFindFirstFractionDivisionByUserId() {
+
+
+    }
     @Test
     void testFindUserFamilyNameByImproperFraction() {
         assertEquals(List.of("Fernandez", "Blanco", "López", "Torres"), new Searches().findUserFamilyNameByImproperFraction()
