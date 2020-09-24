@@ -87,7 +87,14 @@ public class Searches {
     }
 
     public Stream<String> findUserFamilyNameByAllNegativeSignFractionDistinct() {
-        return Stream.empty();
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream()
+                        .peek(x -> LogManager.getLogger(this.getClass()).info("before: " + x))
+                        .anyMatch(fraction ->
+                                fraction.getNumerator() < 0 || fraction.getDenominator() < 0))
+                .map(User::getFamilyName)
+                .peek(x -> LogManager.getLogger(this.getClass()).info("after: " + x))
+                .distinct();
     }
 
     public Stream<Double> findDecimalFractionByUserName(String name) {
