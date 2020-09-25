@@ -31,7 +31,11 @@ public class Searches {
     }
 
     public Stream<String> findUserFamilyNameInitialByAnyProperFraction() {
-        return Stream.empty();
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream()
+                        .anyMatch(fraction -> fraction.isProper()))
+                .map(User::familyNameInitials)
+                .distinct();
     }
 
     public Stream<String> findUserIdByAnyProperFraction() {

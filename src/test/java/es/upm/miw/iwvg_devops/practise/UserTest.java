@@ -86,9 +86,15 @@ public class UserTest {
     }
 
     @Test
-    void testInitials() {
-        testUser = new User("TestID", "TestName", "TestFamilyName", testFractions);
-        assertEquals("T.", testUser.initials());
+    void testNameInitials() {
+        testUser = new User("IdToTest", "nameToTest", "familyNameToTest", testFractions);
+        assertEquals("n.", testUser.nameInitials());
+    }
+
+    @Test
+    void testFamilyNameInitials() {
+        testUser = new User("IdToTest", "nameToTest", "familyNameToTest", testFractions);
+        assertEquals("f.", testUser.familyNameInitials());
     }
 
 }
