@@ -91,4 +91,10 @@ public class UserTest {
         assertEquals("n.", testUser.nameInitials());
     }
 
+    @Test
+    void testFamilyNameInitials() {
+        testUser = new User("IdToTest", "nameToTest", "familyNameToTest", testFractions);
+        assertEquals("f.", testUser.familyNameInitials());
+    }
+
 }
