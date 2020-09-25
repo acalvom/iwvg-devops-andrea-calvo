@@ -68,7 +68,7 @@ class SearchesTest {
     }
 
     @Test
-    void findUserFamilyNameByAllNegativeSignFractionDistinct() {
+    void testFindUserFamilyNameByAllNegativeSignFractionDistinct() {
         assertEquals(List.of("Blanco", "López"), new Searches().findUserFamilyNameByAllNegativeSignFractionDistinct()
                 .collect(Collectors.toList()));
     }
