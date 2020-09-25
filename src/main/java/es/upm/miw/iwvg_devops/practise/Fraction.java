@@ -97,7 +97,6 @@ public class Fraction {
         return (inputFraction.numerator * this.denominator == inputFraction.denominator * this.numerator);
     }
 
-
     @Override
     public String toString() {
         return "Fraction{" +

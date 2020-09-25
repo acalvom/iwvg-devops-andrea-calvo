@@ -2,7 +2,6 @@ package es.upm.miw.iwvg_devops.practise;
 
 import org.apache.logging.log4j.LogManager;
 
-import java.util.Optional;
 import java.util.stream.Stream;
 
 public class Searches {
